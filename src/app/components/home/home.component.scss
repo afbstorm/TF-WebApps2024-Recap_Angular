@@ -1,0 +1,64 @@
+// Variables pour la réutilisation des couleurs et autres valeurs communes
+$background-color-header: #f4f4f4;
+$text-color-header: #333;
+$hover-color-row: #e9ecef;
+$shadow-light: rgba(0,0,0,0.1);
+$shadow-dark: rgba(0,0,0,0.15);
+$pagination-background-color: #f8f9fa;
+
+.p-datatable {
+  &.p-component {
+    font-size: 16px;
+    box-shadow: 0 2px 4px $shadow-light;
+    border-radius: 8px;
+
+    // En-tête de la table
+    .p-datatable-header {
+      background-color: $background-color-header;
+      color: $text-color-header;
+      padding: 16px 24px;
+      border-top-left-radius: 8px;
+      border-top-right-radius: 8px;
+      font-size: 20px;
+    }
+
+    // Corps de la table
+    .p-datatable-tbody {
+      > tr {
+        transition: background-color 0.3s, box-shadow 0.3s;
+
+        &:hover {
+          background-color: $hover-color-row;
+          cursor: pointer;
+          box-shadow: 0 4px 8px $shadow-dark;
+        }
+
+        > td {
+          vertical-align: middle;
+        }
+      }
+    }
+  }
+}
+
+// Styles pour les images
+img {
+  width: 100px;
+  height: auto;
+  border-radius: 50%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+// Pagination
+.p-paginator {
+  padding: 0.5rem;
+  border-bottom-right-radius: 8px;
+  border-bottom-left-radius: 8px;
+  background-color: $pagination-background-color;
+
+  .p-paginator-current {
+    font-weight: bold;
+  }
+}

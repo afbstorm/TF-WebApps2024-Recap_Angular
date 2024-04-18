@@ -1,0 +1,19 @@
+<form (ngSubmit)="register()" [formGroup]="registerForm">
+  <div class="p-fluid">
+    <label>Username</label>
+    <input pInputText id="username" formControlName="username" required>
+  </div>
+  <div class="p-fluid">
+    <label>Email</label>
+    <input pInputText type="email" formControlName="email" required>
+  </div>
+  <div class="p-fluid">
+    <label>Password</label>
+    <p-password [feedback]="false" inputId="password" formControlName="password" required></p-password>
+  </div>
+  <div class="p-fluid">
+    <p-button type="submit">Register</p-button>
+  </div>
+</form>
+
+<a routerLink="/login">Vous avez déjà un compte ?</a>

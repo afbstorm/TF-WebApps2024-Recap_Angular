@@ -1,0 +1,44 @@
+<p-card>
+  <ng-template pTemplate="header">
+    Détails de {{ pokemon.name | titlecase }}
+  </ng-template>
+  <ng-template pTemplate="content">
+    <div class="p-grid">
+      <div class="p-col-12 p-md-6">
+        <img [src]="pokemon.sprites?.front_default" alt="Image of {{ pokemon.name }}">
+      </div>
+      <div class="p-col-12 p-md-6">
+        <p-tabView>
+          <p-tabPanel header="Statistiques">
+            <ul>
+              @for (stat of pokemon.stats; track stat) {
+                <li>
+                  {{ stat.stat.name | titlecase }}: {{ stat.base_stat }}
+                </li>
+              }
+
+            </ul>
+          </p-tabPanel>
+          <p-tabPanel header="Types">
+            <ul>
+              @for (type of pokemon.types; track type) {
+                <li >
+                  {{ type.type.name | titlecase }}
+                </li>
+              }
+            </ul>
+          </p-tabPanel>
+          <p-tabPanel header="Capacités">
+            <ul>
+              @for (ability of pokemon.abilities; track ability) {
+              <li>
+                {{ ability.ability.name | titlecase }}
+              </li>
+              }
+            </ul>
+          </p-tabPanel>
+        </p-tabView>
+      </div>
+    </div>
+  </ng-template>
+</p-card>

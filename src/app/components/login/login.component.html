@@ -1,0 +1,17 @@
+<form (ngSubmit)="login()" [formGroup]="loginForm">
+  <div class="p-fluid">
+    <label>Email</label>
+    <input pInputText type="email" formControlName="email" required>
+  </div>
+  <div class="p-fluid">
+    <label>Password</label>
+    <p-password [feedback]="false" inputId="password" formControlName="password" required></p-password>
+  </div>
+  <div class="p-fluid">
+    <p-button severity="secondary" (click)="login()">Login</p-button>
+  </div>
+</form>
+
+<p-messages severity="success" [textContent]="successRegister"></p-messages>
+
+<a routerLink="/register">Vous n'avez pas de compte ?</a>
